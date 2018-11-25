@@ -91,7 +91,6 @@ class Idea extends Component {
       this.setState({ color: this.props.content.color })
     }
     this.updateColor(this.state.accent)
-    // this.props.onUpdate({ color: this.props.content.color })
   }
 
   componentDidUpdate() {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import './Header.scss'
@@ -18,6 +19,10 @@ class Header extends Component {
       </div>
     )
   }
+}
+
+Header.propTypes = {
+  status: PropTypes.string.isRequired
 }
 
 const mapStateToProps = ({ ideasReducers: { lastStatus: status } }, props) => (
