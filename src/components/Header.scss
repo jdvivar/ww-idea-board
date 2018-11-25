@@ -7,7 +7,11 @@
 .Header-status {
   color: lighten($text-default, 33%);
   font-size: 14px;
-  position: absolute;
-  right: 0;
-  top: 10px;
+  margin-bottom: 20px;
+
+  @media(min-width: $min-width) {
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
 }
