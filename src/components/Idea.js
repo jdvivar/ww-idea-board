@@ -22,8 +22,6 @@ class Idea extends Component {
 
     this.state = {
       ideaAnimation: 'bounceIn',
-      showColorPicker: 'false',
-      showClose: 'false',
       accent: randomColor()
     }
 
@@ -63,8 +61,8 @@ class Idea extends Component {
           className={`Idea ${this.state.ideaAnimation}`}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}>
-        <ColorPicker id={this.props.id} value={this.state.accent} show={this.state.showColorPicker} />
-        <Close onClick={this.handleRemove} show={this.state.showClose} />
+        <ColorPicker id={this.props.id} value={this.state.accent} />
+        <Close onClick={this.handleRemove} />
         <div
             className="Idea-header"
             contentEditable="true"
