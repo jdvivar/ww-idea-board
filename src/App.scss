@@ -1,0 +1,13 @@
+@import 'styles/variables';
+
+.App {
+  color: $text-default;
+  max-width: $grid-width;
+  margin: 0 auto;
+  padding: $grid-gap/2 $grid-gap;
+
+  @media(min-width: $min-width) {
+    padding: 0;
+    margin: 100px auto;
+  }
+}

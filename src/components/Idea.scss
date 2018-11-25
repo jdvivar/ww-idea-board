@@ -1,0 +1,44 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+$border-color: lightgrey;
+
+.Idea {
+
+  --accent: red;
+
+  @include idea-box;
+
+  background-color: white;
+  border: 1px solid $border-color;
+  border-bottom: 5px solid var(--accent);
+  color: var(--accent);
+
+  &:hover {
+    box-shadow: 0 1px 20px -3px rgba($black, .3);
+    border-bottom-width: 0;
+
+    .ColorPicker {
+      bottom: -20px;
+    }
+  }
+
+  [contentEditable=true]:empty:before {
+    content: attr(placeholder);
+    color: rgba($text-default, .5);
+  }
+
+  [contentEditable=true] {
+    outline: none;
+  }
+
+  .Idea-header {
+    margin-bottom: $grid-gap;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .Idea-body {
+    color: $text-default;
+  }
+}

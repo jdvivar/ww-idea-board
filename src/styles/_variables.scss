@@ -1,0 +1,17 @@
+// Grid
+$grid-width: 700px;
+$grid-gap: 20px;
+$grid-columns: 2;
+$grid-columns-desktop: 3;
+
+// Responsive
+$min-width: 768px;
+$lowres-width: 375px; // Low CSS resolution devices (i.e. iPhone 4/5)
+
+// Colors
+$lightgrey: lightgrey;
+$black: #444;
+$text-default: $black;
+
+// Animations
+$animation-time: .5s;

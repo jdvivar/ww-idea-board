@@ -1,0 +1,45 @@
+@import '../styles/variables';
+
+$input-height: 30px;
+$internal-spacing: 8px;
+
+.ColorPicker {
+    background-color: var(--accent);
+    bottom: -$input-height;
+    height: $input-height;
+    left: 0;
+    position: absolute;
+    transition: all $animation-time;
+    width: 100%;
+
+    &.hover {
+      bottom: 0px !important;
+    }
+
+    .ColorPicker-text,
+    .ColorPicker-value {
+      color: white;
+      position: absolute;
+      top: $internal-spacing;
+      font-size: 13px; //iOS min size
+      text-transform: uppercase;
+    }
+
+    .ColorPicker-text {
+      left: $internal-spacing;
+    }
+
+    .ColorPicker-value {
+      right: $internal-spacing;
+    }
+
+    input {
+      border: none;
+      cursor: pointer;
+      height: $input-height;
+      margin: 0;
+      opacity: 0;
+      padding: 0;
+      width: 100%;
+    }
+}

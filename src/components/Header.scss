@@ -1,0 +1,13 @@
+@import '../styles/variables';
+
+.Header {
+  position: relative;
+}
+
+.Header-status {
+  color: lighten($text-default, 33%);
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}

@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
 
-import Idea from './components/Idea/';
+import IdeaList from './components/IdeaList'
+import Header from './components/Header'
+
+import './App.scss'
 
 class App extends Component {
   render() {
-    const content = {
-      header: 'here is the header',
-      body: 'here is the body'
-    }
-
     return (
       <div className="App">
-        <div>Search</div>
-        <div>Filter</div>
-        <Idea content={content} />
+        <div className="grid-wrapper">
+          <Header />
+          <IdeaList />
+        </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

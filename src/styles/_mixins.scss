@@ -1,0 +1,23 @@
+@import './variables';
+
+@mixin idea-box() {
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: inline-block;
+  height: 250px;
+  margin: $grid-gap/2;
+  overflow-y: scroll;
+  padding: $grid-gap;
+  position: relative;
+  transition: all $animation-time;
+  vertical-align: top;
+  width: calc(100% - #{$grid-gap});
+
+  @media (min-width: $lowres-width) {
+    width: calc(#{100%/$grid-columns} - #{$grid-gap});
+  }
+
+  @media (min-width: $min-width) {
+    width: calc(#{100%/$grid-columns-desktop} - #{$grid-gap});
+  }
+}

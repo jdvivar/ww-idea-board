@@ -1,0 +1,21 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.NewIdea {
+  @include idea-box;
+
+  border: 1px dashed lightgrey;
+  color: lightgrey;
+  font-size: 60px;
+  line-height: 2.5;
+  padding: 40px;
+  text-align: center;
+  transition: all $animation-time;
+
+  &:hover {
+    background-color: rgba(white, .25);
+    color: $text-default;
+    border-color: $text-default;
+    cursor: pointer;
+  }
+}

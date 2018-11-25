@@ -1,0 +1,7 @@
+@import '../styles/variables';
+
+.IdeaList {
+  list-style: none;
+  padding: 0;
+  margin: 0 (-$grid-gap/2);
+}
