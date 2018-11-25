@@ -7,17 +7,18 @@ import NewIdea from './NewIdea'
 
 import './IdeaList.scss'
 
-const mapIdeas = idea => <Idea
-  key={ idea.id }
-  id={ idea.id }
-  content={ idea.content }/>
+const mapIdeas = idea => (
+  <Idea key={ idea.id } id={ idea.id } content={ idea.content }/>
+)
 
 class IdeaList extends Component {
   render () {
-    return  <ul className="IdeaList">
-              { this.props.ideas.map(mapIdeas) }
-              <NewIdea />
-            </ul>
+    return  (
+      <ul className="IdeaList">
+        { this.props.ideas.map(mapIdeas) }
+        <NewIdea />
+      </ul>
+    )
   }
 }
 
@@ -31,13 +32,7 @@ IdeaList.propTypes = {
 }
 
 const mapStateToProps = ({ ideasReducers: state }) => ({
-  ideas:
-    state.ideas.map( id => {
-      return {
-        id,
-        content: state.ideasById[id]
-      }
-    })
+  ideas: state.ideas.map( id => ({ id, content: state.ideasById[id] }))
 })
 
 export default connect(mapStateToProps)(IdeaList)
