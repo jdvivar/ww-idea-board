@@ -4,6 +4,8 @@ Check a live demo [here](https://ww-idea-board.danielvivar.com).
 
 ## Available Scripts
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3019f45463f14521ab62264d3649ef78)](https://app.codacy.com/app/jdvivar/ww-idea-board?utm_source=github.com&utm_medium=referral&utm_content=jdvivar/ww-idea-board&utm_campaign=Badge_Grade_Dashboard)
+
 In the project directory, you can run:
 
 ### `npm start`
