@@ -13,11 +13,11 @@ import '../styles/animations.css'
 
 const placeholder = {
   header: 'Title...',
-  body: 'And your idea here...',
+  body: 'And your idea here...'
 }
 
 class Idea extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -34,22 +34,22 @@ class Idea extends Component {
     }, 2000)
   }
 
-  handleInput(event, where) {
+  handleInput (event, where) {
     this.bounceUpdate({ [where]: event.target.innerText })
   }
 
-  toggleIdeaAnimation() {
+  toggleIdeaAnimation () {
     this.setState(state => ({
       ideaAnimation: state.ideaAnimation === 'bounceIn' ? 'bounceOut' : 'bounceIn'
     }))
   }
 
-  handleRemove() {
+  handleRemove () {
     this.toggleIdeaAnimation()
     setTimeout(this.props.onRemove, 700)
   }
 
-  updateColor(color) {
+  updateColor (color) {
     const ideaElement = document.getElementById(`idea-${this.props.id}`)
     ideaElement.style.setProperty('--accent', color)
   }
@@ -57,41 +57,40 @@ class Idea extends Component {
   render () {
     return (
       <li
-          id={ `idea-${this.props.id}` }
-          className={`Idea ${this.state.ideaAnimation}`}
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}>
+        id={`idea-${this.props.id}`}
+        className={`Idea ${this.state.ideaAnimation}`}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}>
         <ColorPicker id={this.props.id} value={this.state.accent} />
         <Close onClick={this.handleRemove} />
         <div
-            className="Idea-header"
-            contentEditable="true"
-            placeholder={placeholder.header}
-            onInput={event => this.handleInput(event, 'header')}
-            suppressContentEditableWarning>
+          className='Idea-header'
+          contentEditable='true'
+          placeholder={placeholder.header}
+          onInput={event => this.handleInput(event, 'header')}
+          suppressContentEditableWarning>
           { this.props.content.header }
         </div>
         <div
-            className="Idea-body"
-            contentEditable="true"
-            placeholder={placeholder.body}
-            onInput={event => this.handleInput(event, 'body')}
-            suppressContentEditableWarning>
+          className='Idea-body'
+          contentEditable='true'
+          placeholder={placeholder.body}
+          onInput={event => this.handleInput(event, 'body')}
+          suppressContentEditableWarning>
           { this.props.content.body }
         </div>
       </li>
     )
-
   }
 
-  componentDidMount() {
+  componentDidMount () {
     if (this.props.content.color) {
       this.setState({ color: this.props.content.color })
     }
     this.updateColor(this.state.accent)
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     if (this.props.content.color) {
       this.updateColor(this.props.content.color)
     }

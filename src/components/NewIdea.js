@@ -8,7 +8,7 @@ import './NewIdea.scss'
 
 class NewIdea extends Component {
   render () {
-    return <li className="NewIdea" onClick={this.props.onClick}>
+    return <li className='NewIdea' onClick={this.props.onClick}>
       +
     </li>
   }

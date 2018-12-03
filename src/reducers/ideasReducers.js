@@ -5,7 +5,7 @@ import {
   UPDATE_IDEA
 } from '../actions/ideasActions'
 
-function timeNow() {
+function timeNow () {
   const date = new Date()
   // const format = { hour: '2-digit', minute:'2-digit', hour12: true }
   const format = { hour12: true }
@@ -29,8 +29,8 @@ const ideasReducers = (state = ideasInitialState, action) => {
           ideas: newIdeasArray,
           ideasById: {
             ...state.ideasById,
-            ...{ [action.id]: { header: '', body: '', color: ''} }
-            },
+            ...{ [action.id]: { header: '', body: '', color: '' } }
+          },
           lastStatus: `${timeNow()} Added a new idea`
         }
       }
@@ -52,9 +52,9 @@ const ideasReducers = (state = ideasInitialState, action) => {
         ...{
           ideas: removedIdeaArray,
           ideasByID: {
-              ...state.ideasById,
-              ...{ [action.id]: { header: '', body: '', color: '' } }
-            },
+            ...state.ideasById,
+            ...{ [action.id]: { header: '', body: '', color: '' } }
+          },
           lastStatus: `${timeNow()} Removed an idea`
         }
       }
@@ -68,9 +68,9 @@ const ideasReducers = (state = ideasInitialState, action) => {
         ...state,
         ...{
           ideasById: {
-          ...state.ideasById,
-          ...{
-            [action.id]: {
+            ...state.ideasById,
+            ...{
+              [action.id]: {
                 ...state.ideasById[action.id],
                 ...action.newContent
               }

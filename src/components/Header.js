@@ -5,15 +5,15 @@ import { connect } from 'react-redux'
 import './Header.scss'
 
 class Header extends Component {
-  render() {
+  render () {
     return (
-      <div className="Header">
+      <div className='Header'>
         <h2>Idea board</h2>
-        <div className="Header-status">
+        <div className='Header-status'>
           {
             this.props.status
-            ? `Last update: ${this.props.status}`
-            : 'Welcome!'
+              ? `Last update: ${this.props.status}`
+              : 'Welcome!'
           }
         </div>
       </div>

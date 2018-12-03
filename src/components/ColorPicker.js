@@ -7,7 +7,7 @@ import { updateIdea } from '../actions/ideasActions'
 import './ColorPicker.scss'
 
 class ColorPicker extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -23,7 +23,7 @@ class ColorPicker extends Component {
     }, 100)
   }
 
-  handleChange({ target: { value }}) {
+  handleChange ({ target: { value } }) {
     // Every time, enqueue change to re-render
     this.setState({ value })
 
@@ -33,25 +33,25 @@ class ColorPicker extends Component {
     this.bounceUpdate(value)
   }
 
-  updateBackground(color) {
+  updateBackground (color) {
     const colorPickerBg = document.querySelector(`#idea-${this.props.id} .ColorPicker`)
     colorPickerBg.style.setProperty('--accent', color)
   }
 
-  handleMouseOver(hover) {
+  handleMouseOver (hover) {
     this.setState({ hover })
   }
 
-  render() {
+  render () {
     return (
       <div
-          className={ `ColorPicker ${this.state.hover}` }
-          onMouseEnter={() => this.handleMouseOver('hover')}
-          onMouseLeave={() => this.handleMouseOver('')}>
-        <span className="ColorPicker-text">Change accent</span>
-        <span className="ColorPicker-value">{this.state.value}</span>
+        className={`ColorPicker ${this.state.hover}`}
+        onMouseEnter={() => this.handleMouseOver('hover')}
+        onMouseLeave={() => this.handleMouseOver('')}>
+        <span className='ColorPicker-text'>Change accent</span>
+        <span className='ColorPicker-value'>{this.state.value}</span>
         <input
-          type="color"
+          type='color'
           value={this.state.value}
           onChange={e => this.handleChange(e)} />
       </div>
